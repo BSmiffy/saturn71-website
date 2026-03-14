@@ -145,7 +145,7 @@ export default function App() {
                 <div style={{ display: 'grid', gap: 14 }}>
                   <h3 className="feature-title display-font">Bad Road</h3>
                   <iframe
-                    src="https://open.spotify.com/embed/track/55rLZYNvYFmDSR0Nc7jQ4E?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/55rLZYNvYFmDSR0Nc7jQ4E?utm_source=generator&theme=0&autoplay=0"
                     width="100%"
                     height="80"
                     frameBorder="0"
@@ -224,7 +224,7 @@ export default function App() {
               {playerOpen ? (
                 <iframe
                   key={currentSingle.spotifyId}
-                  src={`https://open.spotify.com/embed/${currentSingle.spotifyType}/${currentSingle.spotifyId}?utm_source=generator&theme=0`}
+                  src={`https://open.spotify.com/embed/${currentSingle.spotifyType}/${currentSingle.spotifyId}?utm_source=generator&theme=0&autoplay=1`}
                   width="100%"
                   height="80"
                   frameBorder="0"
