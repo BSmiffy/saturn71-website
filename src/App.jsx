@@ -67,6 +67,7 @@ export default function App() {
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#music">Music</a>
+            <a href="#ep">EP</a>
             <a href="#videos">Videos</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -117,12 +118,30 @@ export default function App() {
               <h2 className="display-font">Eclectic songs. One band.</h2>
             </div>
           </div>
-          <div className="panel">
+          <div className="panel bio-panel">
             <p className="meta">
-              Saturn 71 is built around writing, producing, and mixing songs that cut across
-              styles instead of sticking to one template. Every single is its own world — from
-              hard rock to dark folk, from groove-heavy riffs to cinematic atmosphere. The records
-              are the focus. The artwork tells the story.
+              We originally met in 1990 at Chanute AFB in Illinois. We&apos;d jam in our rooms
+              and at the rec center, eventually writing songs together. After we went to different
+              locations, we kept in contact until around the mid-1990s, then lost touch. Around
+              2010 we reconnected, and soon after started writing songs together again. By
+              2014&ndash;2015 we decided to officially start writing as a band &mdash; even though
+              we had no name yet. Who knew coming up with a band name would be harder than writing
+              the songs?
+            </p>
+            <p className="meta">
+              Our influences are wide: country, punk rock, blue-eyed soul, classic rock. We write
+              whatever hits us at the moment. We don&apos;t feel like we should be constrained to
+              one genre &mdash; especially in a world where people buy songs, not albums. Does it
+              really matter that a band sticks to one genre? Our approach is pretty grounded: we
+              think it&apos;s good, it may not be everyone&apos;s cup of tea, and that&apos;s
+              okay. Maybe there&apos;ll be a song or two that you find and really enjoy.
+            </p>
+            <p className="meta">
+              We&apos;re separated by geography &mdash; one of us in California, the other in New
+              Hampshire. Collaboration happens by building individual tracks and sending them back
+              and forth until a song is done. We&apos;ve been writing and releasing music steadily
+              since 2016, settled on the name Saturn 71 in 2024, and we&apos;re still at it. Now
+              if we can just get people to actually listen.
             </p>
           </div>
         </section>
@@ -260,6 +279,76 @@ export default function App() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="section" id="ep">
+          <div className="section-header">
+            <div>
+              <div className="section-kicker display-font">EP</div>
+              <h2 className="display-font">Bad Road to Perdition</h2>
+            </div>
+          </div>
+
+          <div className="feature-grid">
+            <article className="feature-card">
+              <div className="feature-layout">
+                <div className="feature-art">
+                  <img src="/bad_road_to_perdition.png" alt="Bad Road to Perdition EP artwork" />
+                </div>
+                <div style={{ display: 'grid', gap: 14 }}>
+                  <h3 className="feature-title display-font">Bad Road to Perdition</h3>
+                  <ol className="ep-tracklist">
+                    <li>Bad Road</li>
+                    <li>Cemetery Trees</li>
+                    <li>Perdition</li>
+                    <li>Bible and a Gun</li>
+                  </ol>
+                  <iframe
+                    src="https://open.spotify.com/embed/album/6yZ8Yu2L4sv2Y0qvpcW1Y0?utm_source=generator&theme=0"
+                    width="100%"
+                    height="152"
+                    frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                    style={{ borderRadius: 6, border: 'none', display: 'block' }}
+                    title="Bad Road to Perdition EP on Spotify"
+                  />
+                  <div className="hero-actions">
+                    <a
+                      className="button primary display-font"
+                      href="https://open.spotify.com/album/6yZ8Yu2L4sv2Y0qvpcW1Y0"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Listen on Spotify
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <aside className="panel">
+              <h3 className="display-font" style={{ margin: 0, fontSize: '1.15rem' }}>
+                About the EP
+              </h3>
+              <p className="meta">
+                <em>Bad Road to Perdition</em> brings together four tracks that share a dark,
+                road-worn thread &mdash; from the gritty drive of Bad Road to the brooding
+                finality of Bible and a Gun. Four songs, one journey.
+              </p>
+              <div className="platform-list" style={{ marginTop: 8 }}>
+                <a className="link-row" href="https://open.spotify.com/album/6yZ8Yu2L4sv2Y0qvpcW1Y0" target="_blank" rel="noreferrer">
+                  <strong>Spotify</strong><span>Listen →</span>
+                </a>
+                <a className="link-row" href="https://music.apple.com/us/artist/saturn-71/1718270656" target="_blank" rel="noreferrer">
+                  <strong>Apple Music</strong><span>Listen →</span>
+                </a>
+                <a className="link-row" href="https://music.amazon.com/artists/B0CNY5F32Z/saturn-71" target="_blank" rel="noreferrer">
+                  <strong>Amazon Music</strong><span>Listen →</span>
+                </a>
+              </div>
+            </aside>
           </div>
         </section>
 
