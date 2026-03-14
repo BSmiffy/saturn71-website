@@ -28,7 +28,7 @@ export default function App() {
   ];
 
   const streaming = [
-    { label: 'Spotify', href: 'https://open.spotify.com/user/316fpdwlnzbq2rvvdgcgnsi66z6i' },
+    { label: 'Spotify', href: 'https://open.spotify.com/artist/2BImKtcZBK8JWaaJ9pmHcv' },
     { label: 'Apple Music', href: '#' },
     { label: 'iTunes', href: '#' },
     { label: 'Amazon Music', href: '#' },
@@ -149,7 +149,7 @@ export default function App() {
                   <div className="hero-actions">
                     <a
                       className="button primary display-font"
-                      href="https://open.spotify.com/user/316fpdwlnzbq2rvvdgcgnsi66z6i"
+                      href="https://open.spotify.com/artist/2BImKtcZBK8JWaaJ9pmHcv"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -221,7 +221,7 @@ export default function App() {
               <div className="carousel-actions">
                 <a
                   className="button primary display-font"
-                  href="https://open.spotify.com/user/316fpdwlnzbq2rvvdgcgnsi66z6i"
+                  href="https://open.spotify.com/artist/2BImKtcZBK8JWaaJ9pmHcv"
                   target="_blank"
                   rel="noreferrer"
                 >
