@@ -449,45 +449,6 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 34px 80px rgba(0, 0, 0, 0.52);
 }
 
-.carousel-card.clickable {
-  cursor: pointer;
-}
-
-.play-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0);
-  transition: background 200ms ease;
-}
-
-.carousel-card.clickable:hover .play-overlay {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.play-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 999px;
-  background: rgba(197, 52, 32, 0.92);
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  color: #fff;
-  opacity: 0;
-  transform: scale(0.75);
-  transition: opacity 200ms ease, transform 200ms ease;
-}
-
-.carousel-card.clickable:hover .play-icon {
-  opacity: 1;
-  transform: scale(1);
-}
 
 .carousel-card[data-offset='-1'] {
   z-index: 4;

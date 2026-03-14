@@ -35,7 +35,6 @@ export default function App() {
   ];
 
   const [activeIndex, setActiveIndex] = React.useState(1);
-  const [playerOpen, setPlayerOpen] = React.useState(false);
 
   const prev = () => setActiveIndex((value) => (value - 1 + singles.length) % singles.length);
   const next = () => setActiveIndex((value) => (value + 1) % singles.length);
@@ -196,19 +195,13 @@ export default function App() {
               {visibleCards.map((single) => (
                 <div
                   key={`${single.title}-${single.offset}`}
-                  className={`carousel-card ${single.image ? '' : 'placeholder'}${single.offset === 0 ? ' clickable' : ''}`}
+                  className={`carousel-card ${single.image ? '' : 'placeholder'}`}
                   data-offset={single.offset}
-                  onClick={single.offset === 0 ? () => setPlayerOpen(p => !p) : undefined}
                 >
                   {single.image ? (
                     <img src={`/${single.image}`} alt={`${single.title} artwork`} />
                   ) : (
                     <div>Artwork pending<br />{single.title}</div>
-                  )}
-                  {single.offset === 0 && (
-                    <div className="play-overlay">
-                      <span className="play-icon">{playerOpen ? '✕' : '▶'}</span>
-                    </div>
                   )}
                 </div>
               ))}
@@ -221,32 +214,20 @@ export default function App() {
 
             <div className="carousel-caption">
               <h3 className="display-font">{currentSingle.title}</h3>
-              {playerOpen ? (
-                <iframe
-                  key={currentSingle.spotifyId}
-                  src={`https://open.spotify.com/embed/${currentSingle.spotifyType}/${currentSingle.spotifyId}?utm_source=generator&theme=0&autoplay=1`}
-                  width="100%"
-                  height="80"
-                  frameBorder="0"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                  style={{ borderRadius: 6, border: 'none', display: 'block' }}
-                  title={`${currentSingle.title} on Spotify`}
-                />
-              ) : (
-                <p className="meta">
-                  Click the artwork to play — stream on Spotify and Apple Music.
-                </p>
-              )}
+              <iframe
+                key={currentSingle.spotifyId}
+                src={`https://open.spotify.com/embed/${currentSingle.spotifyType}/${currentSingle.spotifyId}?utm_source=generator&theme=0`}
+                width="100%"
+                height="80"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                style={{ borderRadius: 6, border: 'none', display: 'block' }}
+                title={`${currentSingle.title} on Spotify`}
+              />
               <div className="carousel-actions">
-                <button
-                  className={`button display-font${playerOpen ? '' : ' primary'}`}
-                  onClick={() => setPlayerOpen(p => !p)}
-                >
-                  {playerOpen ? '✕ Close Player' : '▶ Play'}
-                </button>
                 <a
-                  className="button display-font"
+                  className="button primary display-font"
                   href={`https://open.spotify.com/track/${currentSingle.spotifyId}`}
                   target="_blank"
                   rel="noreferrer"
