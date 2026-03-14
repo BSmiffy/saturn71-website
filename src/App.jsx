@@ -192,19 +192,33 @@ export default function App() {
 
           <div className="carousel-shell">
             <div className="carousel-stage">
-              {visibleCards.map((single) => (
-                <div
-                  key={`${single.title}-${single.offset}`}
-                  className={`carousel-card ${single.image ? '' : 'placeholder'}`}
-                  data-offset={single.offset}
-                >
-                  {single.image ? (
-                    <img src={`/${single.image}`} alt={`${single.title} artwork`} />
-                  ) : (
-                    <div>Artwork pending<br />{single.title}</div>
-                  )}
-                </div>
-              ))}
+              {visibleCards.map((single) => {
+                const isCenter = single.offset === 0;
+                const spotifyUrl = `https://open.spotify.com/track/${single.spotifyId}`;
+                const Tag = isCenter ? 'a' : 'div';
+                const extraProps = isCenter
+                  ? { href: spotifyUrl, target: '_blank', rel: 'noreferrer', 'aria-label': `Play ${single.title} on Spotify` }
+                  : {};
+                return (
+                  <Tag
+                    key={`${single.title}-${single.offset}`}
+                    className={`carousel-card ${single.image ? '' : 'placeholder'}${isCenter ? ' clickable' : ''}`}
+                    data-offset={single.offset}
+                    {...extraProps}
+                  >
+                    {single.image ? (
+                      <img src={`/${single.image}`} alt={`${single.title} artwork`} />
+                    ) : (
+                      <div>Artwork pending<br />{single.title}</div>
+                    )}
+                    {isCenter && (
+                      <div className="play-overlay">
+                        <span className="play-icon">▶</span>
+                      </div>
+                    )}
+                  </Tag>
+                );
+              })}
             </div>
 
             <div className="carousel-controls" aria-hidden="true">
