@@ -29,9 +29,9 @@ export default function App() {
 
   const streaming = [
     { label: 'Spotify', href: 'https://open.spotify.com/artist/2BImKtcZBK8JWaaJ9pmHcv' },
-    { label: 'Apple Music', href: '#' },
-    { label: 'iTunes', href: '#' },
-    { label: 'Amazon Music', href: '#' },
+    { label: 'Apple Music', href: 'https://music.apple.com/us/artist/saturn-71/1718270656' },
+    { label: 'iTunes', href: 'https://music.apple.com/us/artist/saturn-71/1718270656' },
+    { label: 'Amazon Music', href: 'https://music.amazon.com/artists/B0CNY5F32Z/saturn-71' },
   ];
 
   const [activeIndex, setActiveIndex] = React.useState(1);
