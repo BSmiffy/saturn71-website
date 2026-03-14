@@ -2,22 +2,22 @@ import React from 'react';
 
 export default function App() {
   const singles = [
-    { title: 'Surfing Sasquatch', image: 'Surfing_Sasquatch.png' },
-    { title: 'Bad Road', image: 'Bad_Road.png' },
-    { title: 'Vlad the Impaler', image: 'Vlad_the_Impaler.png' },
-    { title: 'Thieves', image: 'Thieves.png' },
-    { title: 'Spring Heeled Jack', image: 'Spring_Heeled_Jack.png' },
-    { title: 'Feel My Pulse', image: 'Feel_My_Pulse.png' },
-    { title: 'Whiskey No Mas', image: 'Whiskey_No_Mas.png' },
-    { title: 'Cemetery Trees', image: 'Cemetery_Trees.png' },
-    { title: 'Suicidal Sex Machine', image: 'Suicidal_Sex_Machine.png' },
-    { title: 'Meth & Smokes', image: 'Meth&Smokes.png' },
-    { title: "Let's Go", image: 'Lets_Go.png' },
-    { title: 'Out of the Blue', image: 'Out_of_the_Blue.png' },
-    { title: 'Rooster', image: 'Rooster.png' },
-    { title: 'El Diablo', image: 'El_Diablo.png' },
-    { title: 'Perdition', image: null },
-    { title: 'Bible and a Gun', image: null },
+    { title: 'Surfing Sasquatch',   image: 'Surfing_Sasquatch.png',    spotifyId: '3AxvaOOzZNAWoiS3ebNQjk', spotifyType: 'track' },
+    { title: 'Bad Road',            image: 'Bad_Road.png',             spotifyId: '55rLZYNvYFmDSR0Nc7jQ4E', spotifyType: 'track' },
+    { title: 'Vlad the Impaler',    image: 'Vlad_the_Impaler.png',     spotifyId: '5JxNGZgWCrFQpbqHKsSrmO', spotifyType: 'track' },
+    { title: 'Thieves',             image: 'Thieves.png',              spotifyId: '7ptxDTjnaO9HJOGS1zw1cT', spotifyType: 'track' },
+    { title: 'Spring Heeled Jack',  image: 'Spring_Heeled_Jack.png',   spotifyId: '48oKVzUmUTFUsWJDGuLY1K', spotifyType: 'track' },
+    { title: 'Feel My Pulse',       image: 'Feel_My_Pulse.png',        spotifyId: '2oT3NnlsOo9D0XenctLy4z', spotifyType: 'track' },
+    { title: 'Whiskey No Mas',      image: 'Whiskey_No_Mas.png',       spotifyId: '57kloICQ0vYKKc8aoUh0fS', spotifyType: 'track' },
+    { title: 'Cemetery Trees',      image: 'Cemetery_Trees.png',       spotifyId: '40AmfpD5hbu9xrWSGUmszN', spotifyType: 'track' },
+    { title: 'Suicidal Sex Machine',image: 'Suicidal_Sex_Machine.png', spotifyId: '26S0MQbvyVQ61YV7cZGIIF', spotifyType: 'track' },
+    { title: 'Meth & Smokes',       image: 'Meth&Smokes.png',          spotifyId: '5WHqFnlbMyIRTnqD4lQar3', spotifyType: 'track' },
+    { title: "Let's Go",            image: 'Lets_Go.png',              spotifyId: '10Ggw0zy0XbRylQyIIldBO', spotifyType: 'track' },
+    { title: 'Out of the Blue',     image: 'Out_of_the_Blue.png',      spotifyId: '3biINpeTJIvOxKjf9bRWXY', spotifyType: 'track' },
+    { title: 'Rooster',             image: 'Rooster.png',              spotifyId: '0ATfCRacmJ8ouWMwg0IdWZ', spotifyType: 'track' },
+    { title: 'El Diablo',           image: 'El_Diablo.png',            spotifyId: '0I5FZO4D2Pt0H3MkE69vtg', spotifyType: 'track' },
+    { title: 'Perdition',           image: null,                       spotifyId: '72LXr3H2zOt3VqldWxPMpJ', spotifyType: 'track' },
+    { title: 'Bible and a Gun',     image: null,                       spotifyId: '3IFY4RbvBhvZYHn91oql5f', spotifyType: 'track' },
   ];
 
   const socials = [
@@ -35,6 +35,7 @@ export default function App() {
   ];
 
   const [activeIndex, setActiveIndex] = React.useState(1);
+  const [playerOpen, setPlayerOpen] = React.useState(false);
 
   const prev = () => setActiveIndex((value) => (value - 1 + singles.length) % singles.length);
   const next = () => setActiveIndex((value) => (value + 1) % singles.length);
@@ -143,18 +144,17 @@ export default function App() {
                 </div>
                 <div style={{ display: 'grid', gap: 14 }}>
                   <h3 className="feature-title display-font">Bad Road</h3>
-                  <p className="meta">
-                    The latest from Saturn 71. Stream it now on Spotify and Apple Music.
-                  </p>
+                  <iframe
+                    src="https://open.spotify.com/embed/track/55rLZYNvYFmDSR0Nc7jQ4E?utm_source=generator&theme=0"
+                    width="100%"
+                    height="80"
+                    frameBorder="0"
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"
+                    style={{ borderRadius: 6, border: 'none', display: 'block' }}
+                    title="Bad Road on Spotify"
+                  />
                   <div className="hero-actions">
-                    <a
-                      className="button primary display-font"
-                      href="https://open.spotify.com/artist/2BImKtcZBK8JWaaJ9pmHcv"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Play on Spotify
-                    </a>
                     <a className="button display-font" href="#contact">Follow Saturn 71</a>
                   </div>
                 </div>
@@ -196,13 +196,19 @@ export default function App() {
               {visibleCards.map((single) => (
                 <div
                   key={`${single.title}-${single.offset}`}
-                  className={`carousel-card ${single.image ? '' : 'placeholder'}`}
+                  className={`carousel-card ${single.image ? '' : 'placeholder'}${single.offset === 0 ? ' clickable' : ''}`}
                   data-offset={single.offset}
+                  onClick={single.offset === 0 ? () => setPlayerOpen(p => !p) : undefined}
                 >
                   {single.image ? (
                     <img src={`/${single.image}`} alt={`${single.title} artwork`} />
                   ) : (
                     <div>Artwork pending<br />{single.title}</div>
+                  )}
+                  {single.offset === 0 && (
+                    <div className="play-overlay">
+                      <span className="play-icon">{playerOpen ? '✕' : '▶'}</span>
+                    </div>
                   )}
                 </div>
               ))}
@@ -215,19 +221,38 @@ export default function App() {
 
             <div className="carousel-caption">
               <h3 className="display-font">{currentSingle.title}</h3>
-              <p className="meta">
-                Stream on Spotify and Apple Music. New singles drop regularly.
-              </p>
+              {playerOpen ? (
+                <iframe
+                  key={currentSingle.spotifyId}
+                  src={`https://open.spotify.com/embed/${currentSingle.spotifyType}/${currentSingle.spotifyId}?utm_source=generator&theme=0`}
+                  width="100%"
+                  height="80"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  style={{ borderRadius: 6, border: 'none', display: 'block' }}
+                  title={`${currentSingle.title} on Spotify`}
+                />
+              ) : (
+                <p className="meta">
+                  Click the artwork to play — stream on Spotify and Apple Music.
+                </p>
+              )}
               <div className="carousel-actions">
+                <button
+                  className={`button display-font${playerOpen ? '' : ' primary'}`}
+                  onClick={() => setPlayerOpen(p => !p)}
+                >
+                  {playerOpen ? '✕ Close Player' : '▶ Play'}
+                </button>
                 <a
-                  className="button primary display-font"
-                  href="https://open.spotify.com/artist/2BImKtcZBK8JWaaJ9pmHcv"
+                  className="button display-font"
+                  href={`https://open.spotify.com/track/${currentSingle.spotifyId}`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Play on Spotify
+                  Open in Spotify
                 </a>
-                <a className="button display-font" href="#music">View all music</a>
               </div>
               <div className="carousel-dots" aria-label="Carousel navigation">
                 {singles.map((single, index) => (
